@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.054902, 0.780392, 0.356863, 0.266667 )
+
+[sub_resource type="CylinderMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.384314, 1, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CylinderShape" id=7]
+height = 2.00735
+
+[node name="Canos" type="Spatial"]
+
+[node name="Carot" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.73, 0 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Carot"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="Carot"]
+transform = Transform( 1.4, 0, 0, 0, 0.5, 0, 0, 0, 1.4, 0, 4.50794, 0 )
+mesh = SubResource( 3 )
+material = SubResource( 4 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="Carot"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 4.51967, 0 )
+operation = 2
+mesh = SubResource( 5 )
+material = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Carot"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="Carot2" type="Area" parent="."]
+transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, -0.00517035, 8.18589, 0 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Carot2"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="Carot2"]
+transform = Transform( 1.4, 0, 0, 0, 0.5, 0, 0, 0, 1.4, 0, 4.50794, 0 )
+mesh = SubResource( 3 )
+material = SubResource( 4 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="Carot2"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 4.51967, 0 )
+operation = 2
+mesh = SubResource( 5 )
+material = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Carot2"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
